@@ -41,7 +41,7 @@
 				var obj = $(this);
 
 				//store the slide and pager li
-				var slides = $('.slides li', obj);
+				var slides = $('.slides > li', obj);
 				var pager = $('.pager li', obj);
 
 				//set initial current and next slide index values
@@ -49,8 +49,8 @@
 				var next = current+1;
 
 				//get height and width of initial slide image and calculate size ratio
-				var imgHeight = slides.eq(current).find('img').height();
-				var imgWidth = slides.eq(current).find('img').width();
+				var imgHeight = slides.eq(current).height();
+				var imgWidth = slides.eq(current).width();
 				var imgRatio = imgWidth/imgHeight;
 
 				//define vars for setsize function
@@ -136,8 +136,7 @@
 				var setsize = function(){
 					sliderWidth = $('.slides', obj).width();
 					cropHeight = Math.floor(((sliderWidth/imgRatio)/o.lineheight))*o.lineheight;
-
-					$('.slides', obj).css({height: cropHeight});
+                    $('.slides', obj).css({height: cropHeight});
 				};
 				setsize();
 

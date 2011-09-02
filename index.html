@@ -67,13 +67,11 @@ h5 { font-weight: bold; font-size: 14px; color: #000; }
 }
 #header h1 {
 	margin: 0 auto;
-	min-width: 740px;
 	max-width: 1140px;
 }
 #doc { margin: 40px 0; }
 #content {
 	margin: 0 auto;
-	min-width: 740px;
 	max-width: 1140px;
 }
 
@@ -105,10 +103,23 @@ $(window).load(function() {
 
     <div class="blueberry">
       <ul class="slides">
-        <li><img src="http://marktyrrell.com/labs/blueberry/img/slide1.jpg" /></li>
-        <li><img src="http://marktyrrell.com/labs/blueberry/img/slide2.jpg" /></li>
+        <li>
+            <div>
+                <img src="http://marktyrrell.com/labs/blueberry/img/slide1.jpg" />
+                <p>This is a test. This is a test. This is a test. This is a test. This is a test. This is a test. This is a test. This is a test. This is a test. This is a test. This is a test. </p>
+            </div>
+        </li>
+        <li>
+            <div>
+                <img src="http://marktyrrell.com/labs/blueberry/img/slide2.jpg" />
+                <ul>
+                    <li>This is a list test.</li>
+                </ul>
+            </div>
+        </li>
         <li><img src="http://marktyrrell.com/labs/blueberry/img/slide3.jpg" /></li>
         <li><img src="http://marktyrrell.com/labs/blueberry/img/slide4.jpg" /></li>
+        <li><p>This is a test</p></li>
       </ul>
     </div>
 
