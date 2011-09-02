@@ -47,6 +47,7 @@
 				//set initial current and next slide index values
 				var current = 0;
 				var next = current+1;
+				var previous = current-1;
 
 				//get height and width of initial slide image and calculate size ratio
 				var imgHeight = slides.eq(current).height();
@@ -67,7 +68,7 @@
 				} else if(o.pager){
 					obj.append('<ul class="pager"></ul>');
 					slides.each(function(index) {
-						$('.pager', obj).append('<li><a href="#"><span>'+index+'</span></a></li>')
+						$('.pager', obj).append('<li><a href="#"><span>'+index+'</span></a></li>');
 					});
 					pager = $('.pager li', obj);
 					pager.eq(current).addClass('active');
@@ -96,7 +97,7 @@
 							//this prevents animation buildup caused by requestAnimationFrame
 							//rotateTimer starts a timer for the next rotate
 							rotateTimer();
-							$(this).dequeue()
+							$(this).dequeue();
 					});
 
 					//update pager to reflect slide change
