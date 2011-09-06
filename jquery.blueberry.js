@@ -83,7 +83,7 @@
 
 				//rotate to selected slide on pager click
 				if(pager){
-					$('li:not(.nav) a', pager).click(function() {
+					$('.pager li:not(.nav) a').click(function() {
 						//stop the timer
 						clearTimeout(obj.play);
 						//set the slide index based on pager index
