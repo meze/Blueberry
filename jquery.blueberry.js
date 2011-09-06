@@ -128,7 +128,7 @@
 				if(o.nav){
     				$('.blueberry .nav a').click(function () {
     				    clearTimeout(obj.play);
-    				    if($(this).hasClass('next')) {
+    				    if($(this).parent().hasClass('next')) {
     				        rotate();
     				    } else {
     				        next = current - 1;
