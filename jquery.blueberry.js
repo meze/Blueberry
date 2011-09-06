@@ -33,7 +33,7 @@
 				pager: true,
 				nav: true, //reserved
 				keynav: true,
-				nav: false
+				nav: true
 			}
 			var options =  $.extend(defaults, options);
  
@@ -76,18 +76,22 @@
 				}
 				
 				//Add the left/right nav if enabled
-				if(o.nav){
-				    pager.parent().after('<a href="#" class="next nav">Next</a>');
-				    pager.parent().before('<a href="#" class="previous nav">Prev</a>');
+				if(o.nav && o.pager){
+				    pager.parent().prepend('<li class="prev nav"><a href="#">Prev</a></li>');
+				    pager.parent().append('<li class="next nav"><a href="#">Next</a></li>');
 				}
 
 				//rotate to selected slide on pager click
 				if(pager){
-					$('a', pager).click(function() {
+					$('li:not(.nav) a', pager).click(function() {
 						//stop the timer
 						clearTimeout(obj.play);
 						//set the slide index based on pager index
-						next = $(this).parent().index();
+						if(o.nav) { //if we have nav, the index will be a bit off
+						    next = $(this).parent().index() - 1;
+						} else {
+						    next = $(this).parent().index()
+						}
 						//rotate the slides
 						rotate();
 						return false;
@@ -118,6 +122,22 @@
 					current = next;
 					next = current >= slides.length-1 ? 0 : current+1;
 				};
+				
+				//rotate the slide on direction click
+				
+				if(o.nav){
+    				$('.blueberry .nav a').click(function () {
+    				    clearTimeout(obj.play);
+    				    if($(this).hasClass('next')) {
+    				        rotate();
+    				    } else {
+    				        next = current - 1;
+    				        rotate();
+    				    }
+    				    return false;
+    				});
+				};
+				
 				//create a timer to control slide rotation interval
 				var rotateTimer = function(){
 					obj.play = setTimeout(function(){
@@ -156,28 +176,20 @@
 					setsize();
 				});
 				
-				
-
 				//Add keyboard navigation
-
 				if(o.keynav){
 					$(document).keyup(function(e){
-
 						switch (e.which) {
-
 							case 39: case 32: //right arrow & space
 								clearTimeout(obj.play);
 								rotate();
-								break;
-
-
+							break;
 							case 37: // left arrow
 								clearTimeout(obj.play);
 								next = current - 1;
 								rotate();
-								break;
+							break;
 						}
-
 					});
 				}
 
