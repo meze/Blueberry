@@ -53,6 +53,8 @@
 				var imgHeight = slides.eq(current).height();
 				var imgWidth = slides.eq(current).width();
 				var imgRatio = imgWidth/imgHeight;
+				
+				console.log(imgHeight);
 
 				//define vars for setsize function
 				var sliderWidth = 0;
@@ -142,7 +144,7 @@
 				var setsize = function(){
 					sliderWidth = $('.slides', obj).width();
 					cropHeight = Math.floor(((sliderWidth/imgRatio)/o.lineheight))*o.lineheight;
-					console.log(imgRatio +', '+o.lineheight+ ', '+cropHeight);
+					console.log(sliderWidth + ', ' +imgRatio +', '+o.lineheight+ ', '+cropHeight);
                     $('.slides', obj).css({height: cropHeight});
 				};
 				

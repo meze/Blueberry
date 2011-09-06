@@ -30,6 +30,9 @@
 	top: 0;
 	left: 0;
 	overflow: hidden;
+	display: block;
+	width: 100%;
+	max-width: none;
 }
 .blueberry .slides > li > img + div { /*If you don't want an image in the BG, use the .overlay class */
     position: absolute;
@@ -37,7 +40,6 @@
     left: 5%;
 }
 .blueberry .slides > li > img {
-	display: block;
 	width: 100%;
 	max-width: none;
 }
