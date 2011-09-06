@@ -32,7 +32,8 @@
 				hoverpause: false,
 				pager: true,
 				nav: true, //reserved
-				keynav: true
+				keynav: true,
+				nav: false
 			}
 			var options =  $.extend(defaults, options);
  
@@ -40,14 +41,13 @@
 				var o = options;
 				var obj = $(this);
 
-				//store the slide and pager li
+				//store the slide and pager lis
 				var slides = $('.slides > li', obj);
 				var pager = $('.pager li', obj);
 
 				//set initial current and next slide index values
 				var current = 0;
 				var next = current+1;
-				var previous = current-1;
 
 				//get height and width of initial slide image and calculate size ratio
 				var imgHeight = slides.eq(current).height();
@@ -60,7 +60,6 @@
 
 				//hide all slides, fade in the first, add active class to first slide
 				slides.hide().eq(current).fadeIn(o.duration).addClass('active');
-				
 
 				//build pager if it doesn't already exist and if enabled
 				if(pager.length) {
@@ -72,6 +71,12 @@
 					});
 					pager = $('.pager li', obj);
 					pager.eq(current).addClass('active');
+				}
+				
+				//Add the left/right nav if enabled
+				if(o.nav){
+				    pager.parent().after('<a href="#" class="next nav">Next</a>');
+				    pager.parent().before('<a href="#" class="previous nav">Prev</a>');
 				}
 
 				//rotate to selected slide on pager click
@@ -137,8 +142,11 @@
 				var setsize = function(){
 					sliderWidth = $('.slides', obj).width();
 					cropHeight = Math.floor(((sliderWidth/imgRatio)/o.lineheight))*o.lineheight;
+					console.log(imgRatio +', '+o.lineheight+ ', '+cropHeight);
                     $('.slides', obj).css({height: cropHeight});
 				};
+				
+				//set the size of the slider
 				setsize();
 
 				//bind setsize function to window resize event
@@ -156,11 +164,8 @@
 						switch (e.which) {
 
 							case 39: case 32: //right arrow & space
-
 								clearTimeout(obj.play);
-
 								rotate();
-
 								break;
 
 
@@ -168,7 +173,6 @@
 								clearTimeout(obj.play);
 								next = current - 1;
 								rotate();
-
 								break;
 						}
 

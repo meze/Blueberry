@@ -32,9 +32,9 @@
 	overflow: hidden;
 }
 .blueberry .slides > li div {
-    position: relative;
+    
 }
-.blueberry .slides > li > div *:nth-child(2) { /*If you don't want an image in the BG, use the .overlay class */
+.blueberry .slides > li > div { /*If you don't want an image in the BG, use the .overlay class */
     position: absolute;
     top: 50%;
     left: 5%;
@@ -47,6 +47,7 @@
 .blueberry .slides > li.active { display: block; position: relative; }
 .blueberry .crop > li img { width: auto; }
 
+/* For the pagination between slides (the dots) */
 .blueberry .pager {
 	height: 40px;
 	text-align: center;
