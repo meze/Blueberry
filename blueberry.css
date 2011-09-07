@@ -1,6 +1,7 @@
 /*
- * jQuery Blueberry Slider v0.4 BETA
- * http://marktyrrell.com/labs/blueberry/
+ * jQuery Blueberry Slider v0.5 BETA
+ * Originally created and developed by: http://marktyrrell.com/labs/blueberry/
+ * Forked and expanded by: https://github.com/smeranda/
  *
  * Copyright (C) 2011, Mark Tyrrell <me@marktyrrell.com>
  *
@@ -71,6 +72,14 @@
 	-webkit-box-shadow: inset 1px 1px 1px 1px #9ccae5, 0px 1px 1px 1px rgba(55,55,55,0.3);
 	-moz-box-shadow: inset 1px 1px 1px 1px #9ccae5, 0px 1px 1px 1px rgba(55,55,55,0.3);
 	box-shadow: inset 1px 1px 1px 1px #9ccae5, 0px 1px 1px 1px rgba(55,55,55,0.3);
+	opacity: 0.5;
+	-webkit-transition: opacity 0.2s ease;
+	-moz-transition: opacity 0.2s ease;
+	-o-transition: opacity 0.2s ease;
+	transition: opacity 0.2s ease;
+}
+.blueberry:hover .pager{
+    opacity: 1;
 }
 .blueberry .pager > li { 
     display: inline-block;
