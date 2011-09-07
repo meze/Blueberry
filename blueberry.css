@@ -88,9 +88,9 @@
 	background: -ms-linear-gradient(top, rgba(167,206,229,1) 0%,rgba(134,187,214,1) 100%); /* IE10+ */
 	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#a7cee5', endColorstr='#86bbd6',GradientType=0 ); /* IE6-9 */
 	background: linear-gradient(top, rgba(167,206,229,1) 0%,rgba(134,187,214,1) 100%); /* W3C */
-	-webkit-box-shadow: inset 1px 1px 1px 1px #9ccae5, 0px 1px 1px 1px rgba(55,55,55,0.3);
-	-moz-box-shadow: inset 1px 1px 1px 1px #9ccae5, 0px 1px 1px 1px rgba(55,55,55,0.3);
-	box-shadow: inset 1px 1px 1px 1px #9ccae5, 0px 1px 1px 1px rgba(55,55,55,0.3);
+	-webkit-box-shadow: inset 1px 1px 1px 1px #9ccae5, -1px 1px 1px 1px rgba(55,55,55,0.3);
+	-moz-box-shadow: inset 1px 1px 1px 1px #9ccae5, -1px 1px 1px 1px rgba(55,55,55,0.3);
+	box-shadow: inset 1px 1px 1px 1px #9ccae5, -1px 1px 1px 1px rgba(55,55,55,0.3);
 	opacity: 0.5;
 	-webkit-transition: opacity 0.2s ease;
 	-moz-transition: opacity 0.2s ease;
