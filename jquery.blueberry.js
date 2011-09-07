@@ -54,8 +54,6 @@
 				var slideHeight = slides.eq(current).height();
 				var slideWidth = slides.eq(current).width();
 				var slideRatio = slideWidth/slideHeight;
-				
-				console.log(slideHeight);
 
 				//define vars for setsize function
 				var sliderWidth = 0;
@@ -100,7 +98,6 @@
 
 				//primary function to change slides
 				var rotate = function(){
-				    console.log(current);
 					//fade out current slide and remove active class,
 					//fade in next slide and add active class
 					slides.eq(current).fadeOut(o.duration).removeClass('active')
@@ -165,7 +162,6 @@
 				var setsize = function(){
 					sliderWidth = $('.slides', obj).width();
 					cropHeight = Math.floor(((sliderWidth/slideRatio)/o.lineheight))*o.lineheight;
-					console.log(sliderWidth + ', ' +slideRatio +', '+o.lineheight+ ', '+cropHeight);
                     $('.slides', obj).css({height: cropHeight});
 				};
 				
