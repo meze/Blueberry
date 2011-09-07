@@ -35,7 +35,8 @@
 				nav: true, //reserved
 				keynav: true,
 				nav: true
-			}
+			};
+			
 			var options =  $.extend(defaults, options);
  
 			return this.each(function() {
@@ -88,7 +89,7 @@
 						if(o.nav) { //if we have nav, the index will be a bit off
 						    next = $(this).parent().index() - 1;
 						} else {
-						    next = $(this).parent().index()
+						    next = $(this).parent().index();
 						}
 						//rotate the slides
 						rotate();
