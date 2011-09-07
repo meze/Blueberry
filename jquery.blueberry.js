@@ -69,7 +69,7 @@
 				} else if(o.pager){
 					obj.append('<ul class="pager"></ul>');
 					slides.each(function(index) {
-						$('.pager', obj).append('<li><a href="#"><span>'+index+'</span></a></li>');
+						$('.pager', obj).append('<li><a href="#">'+(index+1)+'</a></li>');
 					});
 					pager = $('.pager li', obj);
 					pager.eq(current).addClass('active');
@@ -77,8 +77,8 @@
 				
 				//Add the left/right nav if enabled
 				if(o.nav && o.pager){
-				    pager.parent().prepend('<li class="prev nav"><a href="#">Prev</a></li>');
-				    pager.parent().append('<li class="next nav"><a href="#">Next</a></li>');
+				    pager.parent().prepend('<li class="prev nav"><a href="#">&#9664;</a></li>');
+				    pager.parent().append('<li class="next nav"><a href="#">&#9654;</a></li>');
 				}
 
 				//rotate to selected slide on pager click
