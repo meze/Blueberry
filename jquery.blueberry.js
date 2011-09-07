@@ -51,11 +51,11 @@
 				var next = current+1;
 
 				//get height and width of initial slide image and calculate size ratio
-				var imgHeight = slides.eq(current).height();
-				var imgWidth = slides.eq(current).width();
-				var imgRatio = imgWidth/imgHeight;
+				var slideHeight = slides.eq(current).height();
+				var slideWidth = slides.eq(current).width();
+				var slideRatio = slideWidth/slideHeight;
 				
-				console.log(imgHeight);
+				console.log(slideHeight);
 
 				//define vars for setsize function
 				var sliderWidth = 0;
@@ -164,8 +164,8 @@
 				//calculate and set height based on image width/height ratio and specified line height
 				var setsize = function(){
 					sliderWidth = $('.slides', obj).width();
-					cropHeight = Math.floor(((sliderWidth/imgRatio)/o.lineheight))*o.lineheight;
-					console.log(sliderWidth + ', ' +imgRatio +', '+o.lineheight+ ', '+cropHeight);
+					cropHeight = Math.floor(((sliderWidth/slideRatio)/o.lineheight))*o.lineheight;
+					console.log(sliderWidth + ', ' +slideRatio +', '+o.lineheight+ ', '+cropHeight);
                     $('.slides', obj).css({height: cropHeight});
 				};
 				
