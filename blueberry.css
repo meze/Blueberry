@@ -106,6 +106,7 @@
     text-shadow: 0px 0px 2px #16425c;
     border-right: 1px solid #9ad0eb;
     line-height: 1;
+    zoom:1; *display:inline; /*IE Hacks*/
 }
 .blueberry .pager > li a {
 	display: block;
