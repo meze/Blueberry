@@ -9,6 +9,11 @@ Copyright (C) 2011, Mark Tyrrell
 
 Changelog:
 
+v0.5    07-09-2011 Bug fixes and new features
+    - Fixed out-of-sync timer (also fixes hover pause)
+    - Function added to automatically build forward/backward navigation with an option to enable/disable
+    - Presentation updates
+
 v0.4	30-07-2011	Bug fixes and new features
 	- Function added to automatically build the pager with an option to enable/disable
 	- Bug fixed to allow multiple sliders on a single page
