@@ -86,7 +86,6 @@
 				if(pager){
 					$('.pager li:not(.nav) a').click(function() {
 						//stop the timer
-						clearTimeout(obj.play);
 						//set the slide index based on pager index
 						if(o.nav) { //if we have nav, the index will be a bit off
 						    next = $(this).parent().index() - 1;
@@ -128,7 +127,6 @@
 				
 				if(o.nav){
     				$('.blueberry .nav a').click(function () {
-    				    clearTimeout(obj.play);
     				    if($(this).parent().hasClass('next')) {
     				        rotate();
     				    } else {
@@ -141,6 +139,7 @@
 				
 				//create a timer to control slide rotation interval
 				var rotateTimer = function(){
+				    clearTimeout(obj.play);
 					obj.play = setTimeout(function(){
 						//trigger slide rotate function at end of timer
 						rotate();
@@ -182,11 +181,9 @@
 					$(document).keyup(function(e){
 						switch (e.which) {
 							case 39: case 32: //right arrow & space
-								clearTimeout(obj.play);
 								rotate();
 							break;
 							case 37: // left arrow
-								clearTimeout(obj.play);
 								next = current - 1;
 								rotate();
 							break;
