@@ -100,6 +100,7 @@
 
 				//primary function to change slides
 				var rotate = function(){
+				    console.log(current);
 					//fade out current slide and remove active class,
 					//fade in next slide and add active class
 					slides.eq(current).fadeOut(o.duration).removeClass('active')
@@ -130,7 +131,7 @@
     				    if($(this).parent().hasClass('next')) {
     				        rotate();
     				    } else {
-    				        next = current - 1;
+    				        next = $('.pager .active').index() - 2;
     				        rotate();
     				    }
     				    return false;
@@ -184,7 +185,7 @@
 								rotate();
 							break;
 							case 37: // left arrow
-								next = current - 1;
+								next = $('.pager .active').index() - 2;
 								rotate();
 							break;
 						}
